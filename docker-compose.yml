@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ip-server:
+    build: .
+    container_name: ip-server
+    ports:
+      - 7777:7777
+    restart: always
+    volumes:
+      - ../ip-server:/server
+    networks:
+      - proxynet
+
+networks:
+  proxynet:
+    name: custom_network
