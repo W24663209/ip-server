@@ -31,7 +31,7 @@ class IpAddress:
         if len(ip_str_list) < 7:
             return 0, 0, 0, 0, 0
         ip_nation, ip_version, ip_str, ip_num = ip_str_list[1], ip_str_list[2], ip_str_list[3], int(ip_str_list[4])
-        if ip_nation != 'CN' or ip_version != 'ipv4':
+        if ip_nation != 'CN' or ip_nation != 'HK' or ip_nation != 'TW' or ip_version != 'ipv4':
             return 0, 0, 0, 0, 0
         ip_addr = ip_str.split('.')
         if len(ip_addr) < 4:
